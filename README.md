@@ -1,3 +1,6 @@
+
+Trivial change
+
 # python-intro
 uva library workshop on introduction to python
 
@@ -16,7 +19,7 @@ uva library workshop on introduction to python
 * terminology time
   * programming langugage vs software distribution
   * python2 vs python3
-  
+
 # Goals for Today
 1. Get python running
 2. Get comfortable with python
