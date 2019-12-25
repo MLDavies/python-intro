@@ -1,160 +1,134 @@
-# python-intro
-uva library workshop on introduction to python
-
-## Who am I?
-* [Data Scientist with the Data Science Institute](https://dsi.virginia.edu/people/peter-alonzi)
-* I like to be interrupted with questions! Please jump right in.
-
-## Welcome to the UVA Library
-* [Research Data Services](https://data.library.virginia.edu/)
-* [Workshop Series](https://data.library.virginia.edu/training/)
- 
-## Getting Python (this will take some time)
-* [Windows](https://www.anaconda.com/download/#windows)
-* [Mac](https://www.anaconda.com/download/#macos)
-
-* terminology time
-  * programming langugage vs software distribution
-  * python2 vs python3
-
-# Goals for Today
-1. Get python running
-2. Get comfortable with python
-3. Learn how to look up help
-
-## Outline
-1. Strings and Functions
-2. Data types
-3. Loops
-4. Logic
-5. How to import (aka the most important part)
-
-### A quick note
-Today we are working on python. However there is some knowledge of programming that is required. Don't worry if you don't know it, please ask questions. I will do my best to answer them. And I will also do my best to indicate when something is a python specific detail and when it is a programming in general item.
-
-## A brief history
-* Designed by [Guido van Rossum](https://www.google.com/search?q=google+image+search+guido+van+rossum&safe=off&rlz=1C5CHFA_enUS690US690&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjE_eGK6KHdAhXrRd8KHUzBDHsQ_AUICigB&biw=1440&bih=697)
-* version 1.0 1994
-* version 2.0 2000
-* version 3.0 2008 (not widely adopted until a few years ago)
-* [logo](https://www.google.com/search?q=python+logo&safe=off&rlz=1C5CHFA_enUS690US690&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi9xN-J8aHdAhVBMt8KHT-WDEEQ_AUICigB&biw=1440&bih=697)
-* [anaconda logo](https://www.google.com/search?q=anaconda+logo&safe=off&rlz=1C5CHFA_enUS690US690&source=lnms&tbm=isch&sa=X&ved=0ahUKEwin88Gf8aHdAhUhiOAKHeGLBHYQ_AUICigB&biw=1440&bih=697)
-
-# Let's Get to It (hopefully everyone is done installing)
-* open spyder [it looks like this](spyder.png)
-  * text editor
-  * variable explorer
-  * console
-  * control icons
-  
-## Strings
-* A string is a 'string' of characters
-  * 'apple'  # letters
-  * 'blue42' # letters and numbers
-  * 'i am the very model of a modern major general' # spaces are fine
-  * '7 hills' # it can even start with a number
-  
-## Comments
-We also introduce comments here, the computer will ignore everything after the '#' symbol. There are other forms but we'll see them later on.
-
-## Variables
-You can "save" things as variables. For those curious as to what's going on under the hood...in python a variable is actually just a pointer to the location in memory where the object lives.
-* a = 'apple'
-  * a is the variable
-  * = is the assignment operator
-  * 'apple' (a string) is the object assigned to a
-  
-* *Important Note*: the assignment operator is not like an equals sign
-  * a=5
-  * a=7
-    * totally works, a was just reassigned to point to 7
-    
-## Functions
-* print(a) # this function will show us what a points to
-* we know that print is a function because there is no space between print and the "("
-* format of a function: name(arguments)
-* we say we "call" a function
-* *this is super important* in python the way to spot a function is no space before a "(" and a letter or number
-  * [python built-in functions](https://docs.python.org/3/library/functions.html)
-  * print(...)
-  * type(...)
-  * pow(...)
-  * in an equation you may see 5*(2+3), you won't seet 5(2+3) (try it and see what happens)
-  
-## Indexing
-* for objects with an order you can access individual elements
-* [indexing](indexing.png)
-* you can also pull out slices
-  * syntax [X:Y]
-    * starting at X
-    * upto but not including Y
-
-## Lists
-* represented like functions but with [...]
-* there is an order to the items
-* the items can be of any type
-
-## Dictionary
-* represented like lits but with {...}
-* there is no order to items
-* items contain two pieces: a key and a value represented key:value and the key must be a string
-
-## loops - used when you want to repeat code
-* for loop
-  * for X in Y: << code >>
-    * X is a new variable created on the spot
-    * Y is some preexisting iterable
-    * << code >> is a block of code you want to repeat
-    * eg: for x in range(10): print(x)
-
-* while loop
-  * while Z: << code >>
-    * Z is a boolean
-    * << code >> is a block of code you want to repeat
-    * eg: while i<10: print i; i+=1
-
-## if statements
-* example
-  * if X: << code A >>
-  * else: << code B >>
-    * X is a boolean
-    * << code A >> is some code
-    * << code B >> is some code, could be the same
-    
-
-
-# Import
-* *This is the most important topic*
-* The import command let's you bring in code from another file and use it
-* one example: random number generation
-  * import numpy
-  * numpy.random.randn()
-* There are two steps [info on conda](https://conda.io/docs/user-guide/tasks/manage-pkgs.html) [info on pip](https://pip.pypa.io/en/stable/user_guide/)
-  1. install the module, eg: shell]$ conda install numpy
-  2. python>>> import numpy
-
-# Scripting vs Programming
-It's a matter of modularity. Programs are designed to be modular and work with other programs. Scripts are designed to be single use.
-
-
-
-# Ways to Practice
-1. Write some code
-2. Ask a friend to review it
-
-* Beginning
-  * Flip a coin (~10 lines)
-  * Play rock, paper, scissors  (~25 lines)
-* Intermediate
-  * Guess a secret number between 1 and 10. With hints. (~20 lines)
-  * Dice rolling program
-* Expert
-  * Play blackjack
-  * Play roulette
-
-
-
-
-
-
-
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+if bufexists("~/OneDrive/DSIwd/Alonzi_github/git-intro-master/README.md") | buffer ~/OneDrive/DSIwd/Alonzi_github/git-intro-master/README.md | else | edit ~/OneDrive/DSIwd/Alonzi_github/git-intro-master/README.md | endif
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal backupcopy=
+setlocal balloonexpr=
+setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=fb:*,fb:-,fb:+,n:>
+setlocal commentstring=>\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal cursorlineopt=both
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'markdown'
+setlocal filetype=markdown
+endif
+setlocal fixendofline
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcqln
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal formatprg=
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=-1
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal lispwords=
+setlocal nolist
+setlocal makeencoding=
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=bin,hex
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=htmlcomplete#CompleteTags
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal scrolloff=-1
+setlocal shiftwidth=8
+setlocal noshortname
+setlocal showbreak=
+setlocal sidescrolloff=-1
+setlocal signcolumn=auto
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'markdown'
+setlocal syntax=markdown
+endif
+setlocal tabstop=8
+setlocal tagcase=
+setlocal tagfunc=
+setlocal tags=
+setlocal termwinkey=
+setlocal termwinscroll=10000
+setlocal termwinsize=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal undolevels=-123456
+setlocal varsofttabstop=
+setlocal vartabstop=
+setlocal wincolor=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 17 - ((16 * winheight(0) + 28) / 56)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+17
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
